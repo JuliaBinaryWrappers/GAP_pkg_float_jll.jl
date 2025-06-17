@@ -2,7 +2,6 @@
 export float_
 
 using GAP_jll
-using GAP_lib_jll
 using GMP_jll
 using MPFR_jll
 using MPC_jll
@@ -10,7 +9,7 @@ using MPFI_jll
 JLLWrappers.@generate_wrapper_header("GAP_pkg_float")
 JLLWrappers.@declare_file_product(float_)
 function __init__()
-    JLLWrappers.@generate_init_header(GAP_jll, GAP_lib_jll, GMP_jll, MPFR_jll, MPC_jll, MPFI_jll)
+    JLLWrappers.@generate_init_header(GAP_jll, GMP_jll, MPFR_jll, MPC_jll, MPFI_jll)
     JLLWrappers.@init_file_product(
         float_,
         "lib/gap/float.so",
